@@ -13,49 +13,77 @@ El proyecto tiene como objetivo aplicar técnicas de minería de datos mediante 
 
 Se desarrollarán dos análisis independientes utilizando datasets previamente aprobados por el profesor, con el propósito de identificar patrones, relaciones y agrupaciones relevantes mediante el algoritmo K-Means.
 
+
 ## 2. Datasets aprobados
 
-| Dataset | Descripción |
-|---|---|
-| **1. Calificaciones** | Predicción de calificaciones basada en factores socioeconómicos. |
-| **2. Suicidios** | Tasas globales de suicidio e indicadores socioeconómicos. |
+El proyecto desarrolla dos análisis independientes mediante técnicas de limpieza, exploración, preprocesamiento y agrupamiento con K-Means.
+
+| Dataset | Archivo original | Objetivo |
+|---|---|---|
+| **1. Calificaciones** | `student_grade_ses_dataset.csv` | Identificar perfiles de estudiantes según características académicas, familiares y socioeconómicas. |
+| **2. Suicidios** | `global_suicide_rates_real_who_worldbank.csv` | Identificar agrupaciones y patrones entre países o registros según las tasas de suicidio y los indicadores disponibles. |
 
 **Descarga de datasets:**
 
 [Google Drive – Datasets del proyecto](https://drive.google.com/drive/folders/1sp9HoxjDZN1L6J8TAcZGyOnc-MIelEms?usp=sharing)
 
-Los archivos originales deben almacenarse en `data/raw/` sin modificar su contenido. Los datasets resultantes de la limpieza se guardarán en `data/processed/`.
+Los archivos originales se conservan en `data/raw/` sin modificar su contenido. Los datasets procesados se almacenan en `data/processed/`.
+
+
 
 ## 3. Integrantes del Grupo #2
 
 | Integrante | Responsabilidad |
 |---|---|
-| Brandon Acuña Gamboa | Por asignar |
-| Desmond Bermúdez Rodríguez | Por asignar |
-| Andrei Calderón Vega | Por asignar |
-| Mauricio Ortiz Coronado | Por asignar |
-| Byron Pérez Aguilar | Por asignar |
+| **Byron Pérez Aguilar** | Carga y limpieza de ambos datasets. |
+| **Andrei Calderón Vega** | EDA estadístico y EDA visual de Calificaciones. |
+| **Mauricio Ortiz Coronado** | EDA estadístico y EDA visual de Suicidios. |
+| **Brandon Acuña Gamboa** | Preprocesamiento, selección de K, K-Means y evaluación de Calificaciones. |
+| **Desmond Bermúdez Rodríguez** | Preprocesamiento, selección de K, K-Means y evaluación de Suicidios. |
 
-## 4. Distribución del trabajo
+## 4. Distribución del trabajo por dataset
 
-| Parte | Área | Actividades principales |
+### 4.1 Dataset 1: Calificaciones
+
+| Parte | Actividad | Responsable |
 |---|---|---|
-| **1** | Carga y limpieza | Carga de datasets, dimensiones, tipos de variables, valores nulos, duplicados, inconsistencias, limpieza, etc. **Conclusiones.** |
-| **2** | EDA estadístico | Estadísticas descriptivas, media, mediana, moda, varianza, desviación estándar, cuartiles, frecuencias, comparaciones, etc. **Conclusiones.** |
-| **3** | EDA visual | Histogramas, boxplots, gráficos de barras, dispersión, correlaciones, mapas de calor, valores atípicos, etc. **Conclusiones.** |
-| **4** | Preprocesamiento y selección de K | Selección de variables, codificación, escalado, método del codo (WCSS), gráfico del codo, selección de K, etc. **Conclusiones.** |
-| **5** | K-Means y evaluación | Entrenamiento, etiquetas, centroides, distribución de registros, coeficiente de silueta, PCA, comparación de clústeres, etc. **Conclusiones.** |
+| **01** | Carga, diagnóstico, limpieza y transformación (ETL) | Byron Pérez Aguilar |
+| **02** | Análisis exploratorio estadístico (EDA) | Andrei Calderón Vega |
+| **03** | Análisis exploratorio visual (EDA) | Andrei Calderón Vega |
+| **04** | Preprocesamiento, selección de variables y selección de K | Brandon Acuña Gamboa |
+| **05** | K-Means, evaluación e interpretación de clústeres | Brandon Acuña Gamboa |
 
-### Criterios de distribución
+### 4.2 Dataset 2: Suicidios
 
-- **Partes 1, 2 y 5:** Cada responsable desarrolla su apartado en ambos datasets.
-- **Partes 3 y 4:** Se distribuyen entre dos integrantes, considerando su carga de trabajo.
-  - **Opción A:** Un integrante realiza las partes 3 y 4 de Calificaciones y otro las partes 3 y 4 de Suicidios.
-  - **Opción B:** Un integrante realiza la parte 3 de Calificaciones y la parte 4 de Suicidios; el otro realiza la parte 4 de Calificaciones y la parte 3 de Suicidios.
+| Parte | Actividad | Responsable |
+|---|---|---|
+| **01** | Carga, diagnóstico, limpieza y transformación (ETL) | Byron Pérez Aguilar |
+| **02** | Análisis exploratorio estadístico (EDA) | Mauricio Ortiz Coronado |
+| **03** | Análisis exploratorio visual (EDA) | Mauricio Ortiz Coronado |
+| **04** | Preprocesamiento, selección de variables y selección de K | Desmond Bermúdez Rodríguez |
+| **05** | K-Means, evaluación e interpretación de clústeres | Desmond Bermúdez Rodríguez |
 
-Las actividades mencionadas son una guía y podrán ampliarse según las características de cada dataset.
+### 4.3 Actividades principales por etapa
 
-**Cada apartado debe contener resultados, interpretaciones y una conclusión.**
+| Parte | Actividades |
+|---|---|
+| **01. ETL** | Carga de datos, diagnóstico de calidad, tratamiento de nulos, duplicados, inconsistencias, valores atípicos y exportación del dataset procesado. |
+| **02. EDA estadístico** | Estadísticas descriptivas, frecuencias, medidas de tendencia central y dispersión, análisis de variables y comparaciones entre grupos. |
+| **03. EDA visual** | Histogramas, boxplots, gráficos de barras y dispersión, matrices de correlación, distribuciones y análisis visual de valores atípicos. |
+| **04. Preprocesamiento** | Selección de variables, codificación de categorías, escalado, evaluación de valores atípicos, método del codo (WCSS) y selección de K. |
+| **05. K-Means y evaluación** | Entrenamiento, asignación de clústeres, análisis de centroides, distribución de registros, coeficiente de silueta, visualización mediante PCA e interpretación de grupos. |
+
+### 4.4 Criterios generales
+
+- Cada responsable debe incluir código, resultados, interpretaciones y conclusiones en los apartados asignados.
+- Los integrantes deben utilizar los archivos procesados generados durante el ETL.
+- Los encargados del preprocesamiento deben considerar los hallazgos de los análisis estadísticos y visuales.
+- Los responsables de K-Means deben justificar la selección de variables, el número de clústeres y las métricas de evaluación.
+- Se deben coordinar los cambios que puedan afectar el trabajo de otros integrantes.
+- Todos los integrantes deben conocer ambos datasets y comprender los resultados finales para la defensa del proyecto.
+
+**Documento de distribución:** `docs/Distribucion_Proyecto_Mineria_Datos_Grupo_2.docx`
+
 
 ## 5. Estructura del repositorio
 
@@ -68,8 +96,8 @@ Mineria_Datos_1/
 │
 ├── data/
 │   ├── raw/
-│   │   ├── calificaciones.csv
-│   │   └── suicidio.csv
+│   │   ├── student_grade_ses_dataset.csv
+│   │   └── global_suicide_rates_real_who_worldbank.csv
 │   └── processed/
 │       ├── calificaciones_limpio.csv
 │       └── suicidio_limpio.csv
@@ -102,7 +130,7 @@ Mineria_Datos_1/
 │       └── Suicidio.pptx
 │
 └── docs/
-    └── Distribucion_Trabajo.docx
+    └── Distribucion_Proyecto_Mineria_Datos_Grupo_2.docx
 ```
 
 *Los nombres de los CSV son nombres de referencia y pueden ajustarse a los archivos originales.*
