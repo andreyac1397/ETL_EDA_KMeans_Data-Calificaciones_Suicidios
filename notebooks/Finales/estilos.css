@@ -1,0 +1,271 @@
+
+/* ==========================================
+   MINERÍA DE DATOS - ESTILO COMPARTIDO
+   Compatible con Calificaciones y Suicidio
+   ========================================== */
+
+:root {
+    --fondo: #f4f6f8;
+    --superficie: #ffffff;
+    --texto: #202936;
+    --texto-secundario: #657181;
+    --primario: #183b56;
+    --acento: #278b83;
+    --borde: #dce2e8;
+    --codigo: #f0f3f6;
+    --sombra: 0 5px 22px rgba(25, 42, 58, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 36px 20px;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Contenedor principal de Jupyter */
+
+#notebook-container,
+.jp-Notebook,
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* Celdas */
+
+.cell,
+.jp-Cell {
+    margin-bottom: 22px;
+    padding: 26px 30px;
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+    box-shadow: var(--sombra);
+}
+
+/* Encabezados */
+
+h1, h2, h3, h4 {
+    color: var(--primario);
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.15rem;
+    letter-spacing: -1px;
+    border-bottom: 3px solid var(--acento);
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+}
+
+h2 {
+    font-size: 1.65rem;
+    margin-top: 34px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--borde);
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-top: 26px;
+}
+
+h4 {
+    font-size: 1.05rem;
+}
+
+/* Texto */
+
+p {
+    margin: 12px 0;
+}
+
+strong, b {
+    color: var(--primario);
+}
+
+a {
+    color: var(--acento);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Listas */
+
+ul, ol {
+    padding-left: 26px;
+}
+
+li {
+    margin-bottom: 7px;
+}
+
+/* Tablas */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 22px 0;
+    background: white;
+    font-size: 0.93rem;
+}
+
+th {
+    background: var(--primario);
+    color: white;
+    font-weight: 600;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid var(--borde);
+}
+
+tr:nth-child(even) {
+    background: #f5f8fa;
+}
+
+tr:hover {
+    background: #edf5f4;
+}
+
+/* Gráficos e imágenes */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.output_png img,
+.output_image img,
+.jp-OutputArea img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 4px;
+}
+
+.output_wrapper,
+.output,
+.jp-OutputArea {
+    overflow-x: auto;
+}
+
+/* Código */
+
+pre {
+    padding: 18px;
+    overflow-x: auto;
+    background: var(--codigo);
+    border: 1px solid var(--borde);
+    border-radius: 4px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+code {
+    font-family: Consolas, "Courier New", monospace;
+}
+
+:not(pre) > code {
+    padding: 2px 5px;
+    background: var(--codigo);
+    border-radius: 3px;
+}
+
+/* Celdas de código de Jupyter */
+
+.input,
+.jp-CodeCell {
+    border-left: 3px solid var(--acento);
+}
+
+/* Salidas */
+
+.output_area,
+.jp-OutputArea-child {
+    margin-top: 12px;
+}
+
+/* Citas y notas */
+
+blockquote {
+    margin: 20px 0;
+    padding: 14px 20px;
+    background: #edf5f4;
+    border-left: 4px solid var(--acento);
+    color: var(--texto-secundario);
+}
+
+/* Separadores */
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--borde);
+    margin: 32px 0;
+}
+
+/* Ajustes para pantallas pequeñas */
+
+@media (max-width: 768px) {
+    body {
+        padding: 14px 8px;
+        font-size: 14px;
+    }
+
+    .cell,
+    .jp-Cell {
+        padding: 18px 15px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    table {
+        font-size: 0.82rem;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+/* Impresión */
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .cell,
+    .jp-Cell {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    a {
+        color: inherit;
+    }
+}
